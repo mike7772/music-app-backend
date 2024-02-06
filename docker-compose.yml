@@ -1,0 +1,13 @@
+services:
+  app:
+    image: music-app-backend
+    restart: always
+    build: .
+    network_mode: "host"
+    working_dir: /usr/src/app
+    volumes:
+      - ./app:/usr/src/app
+    expose:
+      - '3000'
+    ports:
+      - "3000:3000"
